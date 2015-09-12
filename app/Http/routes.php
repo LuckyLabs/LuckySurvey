@@ -20,3 +20,4 @@ Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
 ]);
+Route::get('admin', 'Admin\DashboardController@index');
