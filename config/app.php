@@ -146,8 +146,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        Nayjest\Grids\ServiceProvider::class
-
+        Nayjest\Grids\ServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
     ],
 
