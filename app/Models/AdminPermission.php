@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class AdminPermission extends Model
 {
     public $timestamps = false;
+    protected $guarded = [];
 
     public function group()
     {
