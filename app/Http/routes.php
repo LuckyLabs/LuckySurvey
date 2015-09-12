@@ -19,5 +19,6 @@ Route::get('/', function () {
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
+    'admin/groups' => 'Admin\GroupsController'
 ]);
 Route::get('admin', 'Admin\DashboardController@index');
