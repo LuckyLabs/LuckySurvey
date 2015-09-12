@@ -81,7 +81,7 @@ class SurveyController extends Controller
                 'mail_description' => $survey['mail_description'] ? $survey['mail_description'] : $survey['description'],
                 'author_id' => 1,//\Auth::user()->id,
                 'expiration_date' => $survey['expiration_date'],
-                'is_anon' => $survey['is_anon']
+                'is_anon' => isset($survey['is_anon']) ? $survey['is_anon'] : 0
             ]);
 
             foreach($users as $userId)
