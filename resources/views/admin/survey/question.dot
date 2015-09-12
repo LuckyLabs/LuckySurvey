@@ -1,0 +1,37 @@
+<div class="panel panel-default question" data-id="{{=it.id}}">
+    <div class="panel-body">
+        <a href="#" class="close">&times;</a>
+
+        <div class="form-group">
+            <label>Title</label>
+            <input class="form-control" name="question[{{=it.id}}][title]" type="text">
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea class="form-control" rows="2" name="question[{{=it.id}}][description]" cols="50"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Type</label>
+            <select class="form-control" name="question[{{=it.id}}][type]">
+                <option value="1">One Answer</option>
+                <option value="2">Multiple Answers</option>
+                <option value="3">Reorder Answers</option>
+            </select>
+        </div>
+        <h5 class="page-header">
+            Answers
+        </h5>
+        <div class="answersList">
+            <div class="form-group answer">
+                <div class="input-group">
+                    <input class="form-control" name="question[{{=it.id}}][answer][0][text]" type="text">
+                    <span class="input-group-btn">
+                        <a href="#" class="btn btn-warning">&times;</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <a href="#" class="btn btn-sm btn-info">Add Answer</a>
+    </div>
+</div>

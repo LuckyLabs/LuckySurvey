@@ -18,7 +18,8 @@
 | loading any of our classes later on. It feels nice to relax.
 |
 */
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 require __DIR__.'/../bootstrap/autoload.php';
 
 /*
