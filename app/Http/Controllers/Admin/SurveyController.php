@@ -23,9 +23,9 @@ class SurveyController extends Controller
                 'id',
                 'title',
                 'description',
-                'authour_id',
+                'author_id',
                 'created_at',
-                'expired_at',
+                'expiration_date',
                 'is_anon',
                 [
                     'name' => 'actions',
@@ -35,7 +35,7 @@ class SurveyController extends Controller
                         $deleteUrl = '/admin/survey/delete/' . $row->getCellValue('id');
                         $deleteLink = "<a class='btn btn-danger' href='$deleteUrl'><i class='glyphicon glyphicon-trash'></i>&nbsp;Delete</a>";
 
-                        return "<div class='btn-group'>$deleteLink/div>";
+                        return "<div class='btn-group'>$deleteLink</div>";
                     }
                 ]
             ]
