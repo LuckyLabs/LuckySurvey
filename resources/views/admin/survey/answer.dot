@@ -1,0 +1,8 @@
+<div class="form-group answer">
+    <div class="input-group">
+        <input class="form-control" name="question[{{=it.question}}][answer][{{=it.id}}][text]" type="text">
+        <span class="input-group-btn">
+            <a href="#" class="btn btn-warning">&times;</a>
+        </span>
+    </div>
+</div>
