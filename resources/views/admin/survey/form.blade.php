@@ -30,6 +30,10 @@ View::addExtension('dot','php');
                     Describe your survey and send it by e-mail
                 </div>
             </div>
+            <div class="form-group">
+                <label for="inputExpiredAt">Expires</label>
+                <?=Form::textarea('survey[expiration_date]', $model->expiration_date, ['class' => 'form-control', 'id' => 'inputDescription', 'rows' => 5])?>
+            </div>
             <div class="checkbox">
                 <label for="inputIsAnon">
                     <?=Form::checkbox('survey[is_anon]', $model->is_anon, false)?>
@@ -95,6 +99,6 @@ View::addExtension('dot','php');
 <script type="text/x-dot-template" id="answersTemplate">
     @include('admin.survey.answer')
 </script>
-<script src="/admin/js/doT.min.js"></script>
-<script src="/admin/js/survey.form.js"></script>
+<script src="/admin_theme/js/doT.min.js"></script>
+<script src="/admin_theme/js/survey.form.js"></script>
 @stop
