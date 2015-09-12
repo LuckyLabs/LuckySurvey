@@ -34,7 +34,7 @@ class GroupsController extends Controller
                 ]
             ]
         ])->render();
-        $title = 'Groups Management';
+        $title = 'User Groups Management';
         $links = [
             '/admin/groups/create' => "<i class='glyphicon glyphicon-plus'></i>&nbsp;New Group",
         ];
@@ -70,7 +70,7 @@ class GroupsController extends Controller
             '/admin/groups/create' => "<i class='glyphicon glyphicon-plus'></i>&nbsp;New Group",
             '/admin/groups' => 'Manage Groups'
         ];
-        $title = "[$group->name] Group Management";
+        $title = "[$group->name] User Group Management";
         return view('admin.default.grid-page', compact('grid', 'title', 'links'));
     }
 }
