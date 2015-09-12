@@ -17,6 +17,7 @@ class AppInit extends Migration
             $table->string('name')->nullable();
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('remember_token')->nullable();
         });
 
         Schema::create('admin_permissions', function(Blueprint $table){
