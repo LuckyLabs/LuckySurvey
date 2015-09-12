@@ -13,4 +13,9 @@ class User extends Model
     {
         return $this->hasMany('App\Models\UserGroup');
     }
+
+    public function groupRelations()
+    {
+        return $this->hasMany(UserGroup::class);
+    }
 }

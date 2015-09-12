@@ -23,6 +23,7 @@ Route::controller('admin/survey', 'Admin\SurveyController', [
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
-    'admin/groups' => 'Admin\GroupsController'
+    'admin/groups' => 'Admin\GroupsController',
+    'admin/users' => 'Admin\UsersController'
 ]);
 Route::get('admin', 'Admin\DashboardController@index');
