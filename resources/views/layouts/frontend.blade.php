@@ -14,7 +14,7 @@
     <![endif]-->
 </head>
 <body>
-
+@yield('content')
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="/vendor/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->

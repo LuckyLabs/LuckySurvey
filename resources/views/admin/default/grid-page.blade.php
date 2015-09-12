@@ -1,5 +1,9 @@
 @extends('layouts.backend')
 
+@section('title')
+{{ $title }}
+@stop
+
 @section('content')
     @if(isset($title))
         <h1>{!! $title !!}</h1><hr>

@@ -14,6 +14,10 @@ View::addExtension('dot','php');
             <h3 class="page-header">Create Survey</h3>
             <?=Form::open(['route' => 'admin.survey.save', 'method' => 'post'])?>
             <div class="form-group">
+                <label for="groups">Groups to send</label>
+                <?=Form::select('groups[]', $groups, null, ['multiple' => 'multiple','class'=>'form-control'])?>
+            </div>
+            <div class="form-group">
                 <label for="inputTitle">Title</label>
                 <?=Form::text('survey[title]', $model->title, ['class' => 'form-control', 'id' => 'inputTitle'])?>
             </div>
@@ -32,7 +36,7 @@ View::addExtension('dot','php');
             </div>
             <div class="form-group">
                 <label for="inputExpiredAt">Expires</label>
-                <?=Form::textarea('survey[expiration_date]', $model->expiration_date, ['class' => 'form-control', 'id' => 'inputDescription', 'rows' => 5])?>
+                <?=Form::text('survey[expiration_date]', $model->expiration_date, ['class' => 'form-control'])?>
             </div>
             <div class="checkbox">
                 <label for="inputIsAnon">

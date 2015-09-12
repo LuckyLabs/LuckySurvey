@@ -12,6 +12,7 @@
 */
 
 Route::get('admin', 'Admin\DashboardController@index');
+Route::get('survey/{surveyId}/{userId}/{token}', 'SurveyController@view');
 
 Route::controller('admin/survey', 'Admin\SurveyController', [
     'getIndex' => 'admin.survey.list',

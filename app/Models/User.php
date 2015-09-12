@@ -8,4 +8,9 @@ class User extends Model
 {
     public $timestamps = false;
     protected $guarded = [];
+
+    public function groups()
+    {
+        return $this->hasMany('App\Models\UserGroup');
+    }
 }

@@ -7,8 +7,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\AnswerVariant;
+use App\Models\Group;
 use App\Models\Question;
 use App\Models\Survey;
+use App\Models\User;
+use App\Models\UserSurvey;
 use Grids;
 use Nayjest\Grids\DataRow;
 use Illuminate\Http\Request;
@@ -57,14 +60,21 @@ class SurveyController extends Controller
         $questions = [
             $question
         ];
-        return view('admin.survey.form', ['model' => $model, 'questions' => $questions]);
+
+        $groups = Group::all()->lists('name', 'id');
+        return view('admin.survey.form', ['model' => $model, 'questions' => $questions, 'groups' => $groups]);
     }
 
     public function postSave(Request $request)
     {
         $questions = $request->input('question');
         $survey = $request->input('survey');
-        \DB::transaction(function() use ($questions, $survey) {
+        $groups = $request->input('groups');
+        $users = User::whereHas('groups', function($q) use ($groups) {
+            $q->whereIn('group_id', $groups);
+        })->lists('id');
+
+        \DB::transaction(function() use ($questions, $survey, $users) {
             $surveyRecord = Survey::create([
                 'title' => $survey['title'],
                 'description' => $survey['description'],
@@ -73,6 +83,15 @@ class SurveyController extends Controller
                 'expiration_date' => $survey['expiration_date'],
                 'is_anon' => $survey['is_anon']
             ]);
+
+            foreach($users as $userId)
+            {
+                UserSurvey::create([
+                    'survey_id' => $surveyRecord->id,
+                    'user_id' => $userId,
+                    'token' => uniqid()
+                ]);
+            }
             foreach($questions as $question)
             {
                 $questionRecord = Question::create([
