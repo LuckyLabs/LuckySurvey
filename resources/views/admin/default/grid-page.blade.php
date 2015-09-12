@@ -3,7 +3,7 @@
 @section('content')
     <?php
     if (isset($title)) {
-        echo "";
+        echo "<h1>$title</h1><hr>";
     }
     ?>
     <?= $grid ?>
