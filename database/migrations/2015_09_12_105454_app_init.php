@@ -137,7 +137,7 @@ class AppInit extends Migration
         Schema::dropIfExists('user_groups');
         Schema::dropIfExists('surveys');
         Schema::dropIfExists('questions');
-        Schema::dropIfExists('answer_variant');
+        Schema::dropIfExists('answer_variants');
         Schema::dropIfExists('user_survey');
         Schema::dropIfExists('voter');
         Schema::dropIfExists('voter_group');
