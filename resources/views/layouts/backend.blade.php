@@ -30,7 +30,7 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/admin">Dashboard</a></li>
                 <li><a href="/admin/users">Users</a></li>
-                <li><a href="/admin/surveys">Surveys</a></li>
+                <li><a href="/admin/survey">Surveys</a></li>
                 <li><a href="/admin/groups">Groups</a></li>
             </ul>
             @include('layouts.parts.user_widget')

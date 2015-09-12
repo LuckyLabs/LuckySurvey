@@ -24,10 +24,10 @@ class GroupsController extends Controller
                     'label' => 'Actions',
                     'callback' => function($value, DataRow $row){
                         $manageMembersUrl = '/admin/groups/members/' . $row->getCellValue('id');
-                        $manageMembersLink = "<a class='btn btn-info' href='$manageMembersUrl'>Manage Members</a>";
+                        $manageMembersLink = "<a class='btn btn-info' href='$manageMembersUrl'><i class='glyphicon glyphicon-user'></i>&nbsp;Manage Members</a>";
 
                         $manageMembersUrl = '/admin/groups/delete/' . $row->getCellValue('id');
-                        $deleteGroupLink = "<a class='btn btn-danger' href='$manageMembersUrl'>Delete</a>";
+                        $deleteGroupLink = "<a class='btn btn-danger' href='$manageMembersUrl'><i class='glyphicon glyphicon-trash'></i>&nbsp;Delete</a>";
 
                         return "<div class='btn-group'>$manageMembersLink $deleteGroupLink</div>";
                     }
@@ -36,9 +36,9 @@ class GroupsController extends Controller
         ])->render();
         $title = 'Groups Management';
         $links = [
-            'groups/create' => 'New Group',
+            '/admin/groups/create' => "<i class='glyphicon glyphicon-plus'></i>&nbsp;New Group",
         ];
-        return view('admin.default.grid-page', compact('grid', 'title'));
+        return view('admin.default.grid-page', compact('grid', 'title', 'links'));
     }
 
     public function getMembers($groupId)
@@ -61,12 +61,16 @@ class GroupsController extends Controller
                     'name' => 'actions',
                     'label' => 'Actions',
                     'callback' => function(){
-                        return "<a class='btn btn-info'>Remove</a>";
+                        return "<a class='btn btn-info'><i class='glyphicon glyphicon-trash'></i>&nbsp;Remove</a>";
                     }
                 ]
             ]
         ])->render();
+        $links = [
+            '/admin/groups/create' => "<i class='glyphicon glyphicon-plus'></i>&nbsp;New Group",
+            '/admin/groups' => 'Manage Groups'
+        ];
         $title = "[$group->name] Group Management";
-        return view('admin.default.grid-page', compact('grid', 'title'));
+        return view('admin.default.grid-page', compact('grid', 'title', 'links'));
     }
 }
