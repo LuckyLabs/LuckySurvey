@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Grids\GridsHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Group;
 use App\Models\User;
@@ -13,7 +14,7 @@ class GroupsController extends Controller
 {
     public function getIndex()
     {
-
+        GridsHelper::prettyGrids();
         $grid = Grids::make([
             'src' => Group::class,
             'columns' => [
@@ -22,6 +23,7 @@ class GroupsController extends Controller
                 [
                     'name' => 'actions',
                     'label' => 'Actions',
+                    'sortable' => false,
                     'callback' => function($value, DataRow $row){
                         $manageMembersUrl = '/admin/groups/members/' . $row->getCellValue('id');
                         $manageMembersLink = "<a class='btn btn-info' href='$manageMembersUrl'><i class='glyphicon glyphicon-user'></i>&nbsp;Manage Members</a>";
@@ -43,6 +45,7 @@ class GroupsController extends Controller
 
     public function getMembers($groupId)
     {
+        GridsHelper::prettyGrids();
         $group = Group::findOrFail($groupId);
         $users = (new User)->newQuery()
             ->leftJoin('user_groups', 'users.id','=','user_groups.user_id')
@@ -60,8 +63,9 @@ class GroupsController extends Controller
                 [
                     'name' => 'actions',
                     'label' => 'Actions',
+                    'sortable' => false,
                     'callback' => function(){
-                        return "<a class='btn btn-info'><i class='glyphicon glyphicon-trash'></i>&nbsp;Remove</a>";
+                        return "<a class='btn btn-danger'><i class='glyphicon glyphicon-trash'></i>&nbsp;Remove</a>";
                     }
                 ]
             ]
