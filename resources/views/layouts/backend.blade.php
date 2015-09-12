@@ -23,19 +23,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/admin">Admin Lucky Survet</a>
+            <a class="navbar-brand" href="/admin">Admin Lucky Survey</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/admin">Dashboard</a></li>
                 <li><a href="/admin/users">Users</a></li>
-                <li><a href="/admin/surveys">Users</a></li>
+                <li><a href="/admin/surveys">Surveys</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
 
-<div class="container">
+<div class="container" style="margin-top:70px;">
 
     @yield('content')
 
