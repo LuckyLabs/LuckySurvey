@@ -32,6 +32,6 @@
             </div>
         </div>
         <hr>
-        <a href="#" class="btn btn-sm btn-info">Add Answer</a>
+        <a href="#" class="btn btn-sm btn-info addAnswer">Add Answer</a>
     </div>
 </div>

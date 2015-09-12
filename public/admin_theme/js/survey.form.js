@@ -11,7 +11,7 @@
         questionIterator++;
     });
 
-    $(".addAnswer").click(function(e){
+    $(document).on('click', ".addAnswer", function(e){
         e.preventDefault();
 
         var question = $(this).closest('.question'),

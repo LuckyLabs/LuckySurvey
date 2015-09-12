@@ -58,8 +58,8 @@ class AppInit extends Migration
             $table->text('description');
             $table->text('mail_description');
             $table->integer('author_id');
-            $table->timestamp('created_at');
-            $table->date('expired_at');
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));;
+            $table->date('expiration_date');
             $table->smallInteger('is_anon')->default(0);
         });
 
@@ -139,9 +139,9 @@ class AppInit extends Migration
         Schema::dropIfExists('surveys');
         Schema::dropIfExists('questions');
         Schema::dropIfExists('answer_variants');
-        Schema::dropIfExists('user_survey');
-        Schema::dropIfExists('voter');
-        Schema::dropIfExists('voter_group');
+        Schema::dropIfExists('user_surveys');
+        Schema::dropIfExists('voters');
+        Schema::dropIfExists('voter_groups');
         Schema::dropIfExists('results');
     }
 }

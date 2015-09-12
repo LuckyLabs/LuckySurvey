@@ -16,7 +16,7 @@
 <body>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="/vendor/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
 </body>
