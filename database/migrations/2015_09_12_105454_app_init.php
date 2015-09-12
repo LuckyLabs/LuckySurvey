@@ -72,14 +72,14 @@ class AppInit extends Migration
             $table->index('survey_id');
         });
 
-        Schema::create('answer_variant', function(Blueprint $table){
+        Schema::create('answer_variants', function(Blueprint $table){
             $table->increments('id');
             $table->integer('question_id');
             $table->string('text');
             $table->smallInteger('sort_order');
         });
 
-        Schema::create('user_survey', function(Blueprint $table){
+        Schema::create('user_surveys', function(Blueprint $table){
             $table->increments('id');
             $table->integer('survey_id');
             $table->integer('user_id');
@@ -91,7 +91,7 @@ class AppInit extends Migration
             $table->index('survey_id');
         });
 
-        Schema::create('voter', function(Blueprint $table){
+        Schema::create('voters', function(Blueprint $table){
             $table->increments('id');
             $table->integer('survey_id');
             $table->string('full_name')->nullable();
@@ -103,7 +103,7 @@ class AppInit extends Migration
             $table->index('survey_id');
         });
 
-        Schema::create('voter_group', function(Blueprint $table){
+        Schema::create('voter_groups', function(Blueprint $table){
             $table->increments('id');
             $table->integer('voter_id');
             $table->integer('group_id');
