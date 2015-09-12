@@ -7,11 +7,13 @@ return [
     'admins' => [
         [
             'id' => 1,
+            'name' => 'Admin1',
             'email' => 'admin@lucky-survey.com',
             'password' => 'adminpass1'
         ],
         [
             'id' => 2,
+            'name' => 'Admin2',
             'email' => 'admin2@lucky-survey.com',
             'password' => 'adminpass2'
         ]
