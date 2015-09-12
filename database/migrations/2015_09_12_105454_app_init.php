@@ -14,8 +14,10 @@ class AppInit extends Migration
     {
         Schema::create('admins', function(Blueprint $table){
             $table->increments('id');
+            $table->string('name')->nullable();
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('remember_token')->nullable();
         });
 
         Schema::create('admin_permissions', function(Blueprint $table){
@@ -136,7 +138,7 @@ class AppInit extends Migration
         Schema::dropIfExists('user_groups');
         Schema::dropIfExists('surveys');
         Schema::dropIfExists('questions');
-        Schema::dropIfExists('answer_variant');
+        Schema::dropIfExists('answer_variants');
         Schema::dropIfExists('user_survey');
         Schema::dropIfExists('voter');
         Schema::dropIfExists('voter_group');

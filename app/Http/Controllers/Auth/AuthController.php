@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\Admin;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -23,6 +24,8 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+    protected $redirectAfterLogout = '/auth/login';
+
     /**
      * Create a new authentication controller instance.
      *
@@ -43,7 +46,7 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'email' => 'required|email|max:255|unique:admins',
             'password' => 'required|confirmed|min:6',
         ]);
     }
@@ -56,7 +59,7 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        return Admin::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),

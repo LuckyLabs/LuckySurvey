@@ -17,6 +17,7 @@ class Question extends Model
     const TYPE_ORDER = 3;
 
     public $timestamps = false;
+    protected $guarded = [];
 
     public function answers()
     {

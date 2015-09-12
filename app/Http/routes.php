@@ -18,3 +18,9 @@ Route::controller('admin/survey', 'Admin\SurveyController', [
     'getCreate' => 'admin.survey.create',
     'postSave' => 'admin.survey.save'
 ]);
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
+Route::get('admin', 'Admin\DashboardController@index');
