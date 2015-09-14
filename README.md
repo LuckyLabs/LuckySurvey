@@ -20,3 +20,7 @@ php artisan db:seed
 php artisan serve
 ```
 
+## License
+MIT
+
+(c) 2015, LuckyLabs Inc.
