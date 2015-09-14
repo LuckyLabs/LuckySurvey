@@ -7,17 +7,16 @@ Enterprise Survey Service
 * DBMS (MySQL, Postgres, SQLite or SQL Server)
 
 ## Installation
-
-`
+Run following commands:
+```bash
 composer install
-
 php artisan migrate
-
 php artisan db:seed
-`
+```
 
 ## Running web-server
-`
+
+```bash
 php artisan serve
-`
+`bash
 
