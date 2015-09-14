@@ -18,5 +18,5 @@ php artisan db:seed
 
 ```bash
 php artisan serve
-`bash
+```
 
