@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('admin', 'Admin\DashboardController@index');
+Route::get('admin', [
+    'middleware' => 'auth',
+    'uses' => 'Admin\DashboardController@index'
+]);
 Route::get('survey/{surveyId}/{userId}/{token}', 'SurveyController@view');
 
 Route::controller('admin/survey', 'Admin\SurveyController', [

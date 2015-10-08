@@ -27,12 +27,14 @@
             <a class="navbar-brand" href="/admin">Admin Lucky Survey</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
+            @if(Auth::check())
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/admin">Dashboard</a></li>
                 <li><a href="/admin/users">Users</a></li>
                 <li><a href="/admin/groups">User Groups</a></li>
                 <li><a href="/admin/survey">Surveys</a></li>
             </ul>
+            @endif
             @include('layouts.parts.user_widget')
         </div><!--/.nav-collapse -->
 

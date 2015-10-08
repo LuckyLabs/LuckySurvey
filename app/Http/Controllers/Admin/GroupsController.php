@@ -12,6 +12,11 @@ use Nayjest\Grids\Grids;
 
 class GroupsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function getIndex()
     {
         GridsHelper::prettyGrids();
