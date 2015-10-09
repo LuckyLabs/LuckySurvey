@@ -18,4 +18,9 @@ class User extends Model
     {
         return $this->hasMany(UserGroup::class);
     }
+
+    public function getFullNameAttribute()
+    {
+        return $this->attributes['first_name'].' '.$this->attributes['last_name'];
+    }
 }
